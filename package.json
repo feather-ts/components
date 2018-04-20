@@ -1,6 +1,6 @@
 {
     "name": "@feather-ts/components",
-    "version": "1.0.24",
+    "version": "1.0.25",
     "description": "feather-ts date-picker component",
     "types": "dist/components.d.ts",
     "main": "dist/components.js",

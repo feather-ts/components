@@ -1,0 +1,16 @@
+horizontal-split {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    .handle {
+        width: 5px;
+        cursor: ew-resize;
+        border-left: .5px solid black;
+        border-right: .5px solid black;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, .1);
+        }
+    }
+}

@@ -1,7 +1,7 @@
 {
     "name": "@feather-ts/components",
-    "version": "1.0.25",
-    "description": "feather-ts date-picker component",
+    "version": "1.0.3",
+    "description": "feather-ts various components",
     "types": "dist/components.d.ts",
     "main": "dist/components.js",
     "repository": {
@@ -15,8 +15,8 @@
     },
     "homepage": "https://github.com/feather-ts/components#readme",
     "dependencies": {
-        "@feather-ts/feather-ts": "2.0.28",
-        "@feather-ts/ui-common": "1.0.30",
+        "@feather-ts/feather-ts": "2.0.38",
+        "@feather-ts/ui-common": "1.0.44",
         "@fortawesome/fontawesome-free-webfonts": "1.0.6",
         "bulma": "0.7.0",
         "fecha": "2.3.3"

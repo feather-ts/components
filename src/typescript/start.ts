@@ -7,6 +7,7 @@ import {Construct, start, Widget} from '@feather-ts/feather-ts/dist/decorators/c
 import {render} from '@feather-ts/feather-ts/dist/core/bind'
 import {Template} from '@feather-ts/feather-ts/dist/decorators/template'
 import './horizontal-split/horizontal-split'
+import './scrollpane/scrollpane'
 import './start.pcss'
 import './common.pcss'
 
@@ -19,7 +20,7 @@ export class Showcase implements Widget {
     markup() {
         return `
         <horizontal-split class="full-height">
-            <div>bla</div>
+            <scrollpane><div>bla</div></scrollpane>
             <div>blub</div>
         </horizontal-split>
         `

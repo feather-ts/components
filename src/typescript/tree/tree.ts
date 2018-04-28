@@ -1,10 +1,11 @@
 import {ArrayWidget} from '@feather-ts/feather-ts/dist/decorators/construct'
-import {NodeListener} from './tree-listener'
 import {On, Scope} from '@feather-ts/feather-ts/dist/decorators/event'
 import {TemplateNode} from '@feather-ts/feather-ts/dist/decorators/template-node'
 import {LocalStorage} from '@feather-ts/feather-ts/dist/decorators/local-storage'
-import {isKey, Key} from '@feather-ts/ui-common'
-import {Computed, Template} from '@feather-ts/feather-ts'
+import {Template} from '@feather-ts/feather-ts/dist/decorators/template'
+import {Computed} from '@feather-ts/feather-ts/dist/decorators/computed'
+import {isKey, Key} from '@feather-ts/ui-common/dist/keys'
+import {NodeListener} from './tree-listener'
 
 export enum TreeNodeIcon {
     folderOpen = 'fa-folder-open-o',

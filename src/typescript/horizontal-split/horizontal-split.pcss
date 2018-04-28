@@ -2,12 +2,19 @@ horizontal-split {
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    touch-action: none;
+
+    > *:last-child {
+        flex: auto;
+    }
 
     .handle {
+        flex: none;
         width: 5px;
         cursor: ew-resize;
         border-left: .5px solid black;
         border-right: .5px solid black;
+        user-select: none;
 
         &:hover {
             background-color: rgba(0, 0, 0, .1);

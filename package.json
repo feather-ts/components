@@ -1,6 +1,6 @@
 {
     "name": "@feather-ts/components",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "description": "feather-ts various components",
     "types": "dist/components.d.ts",
     "main": "dist/components.js",
@@ -14,17 +14,19 @@
         "url": "https://github.com/feather-ts/components/issues"
     },
     "homepage": "https://github.com/feather-ts/components#readme",
+    "peerDependencies": {
+        "@feather-ts/feather-ts": "2.0.73",
+        "@feather-ts/ui-common": "1.0.65"
+    },
     "dependencies": {
-        "@feather-ts/feather-ts": "2.0.38",
-        "@feather-ts/ui-common": "1.0.44",
         "@fortawesome/fontawesome-free-webfonts": "1.0.6",
-        "bulma": "0.7.0",
+        "bulma": "0.7.1",
         "fecha": "2.3.3"
     },
     "devDependencies": {
         "npm-run-all": "4.1.2",
         "parcel-bundler": "1.7.1",
-        "postcss": "6.0.21",
+        "postcss": "6.0.22",
         "postcss-cssnext": "3.1.0",
         "postcss-import": "11.1.0",
         "postcss-nested": "3.0.0",
@@ -44,7 +46,7 @@
         "watch": "parcel src/html/index.html -p 9080",
         "npm:version": "npm --no-git-tag-version version patch",
         "ui:compile": "tsc -d",
-        "clean": "rimraf dist",
+        "clean": "rimraf dist lib",
         "css:compile": "postcss src/typescript/**/*.pcss --dir dist --base",
         "prepare": "npm-run-all clean npm:version css:compile ui:compile",
         "test": "mocha --require ts-node/register --require src/javascript/mocha-setup.js src/typescript/**/*.spec.ts"

@@ -12,7 +12,7 @@ export class HorizontalSplit implements Widget {
     dragging = false
     @LocalStorage() width = 200
 
-    init = (el: HTMLElement) => {
+    init(el: HTMLElement) {
         this.element = el
         this.firstElement = el.firstElementChild as HTMLElement
         const dragger = document.createElement('div')

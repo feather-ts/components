@@ -19,10 +19,18 @@ export class Showcase implements Widget {
     @Template()
     markup() {
         return `
-        <horizontal-split class="full-height">
-            <scrollpane><div>bla</div></scrollpane>
-            <div>blub</div>
-        </horizontal-split>
+        <div class="application">
+            <div class="navbar has-shadow">
+                <div class="navbar-brand">
+                    <div class="navbar-item">Components</div>
+                </div>
+            </div>
+            <horizontal-split class="full-height">
+                <scrollpane><div>bla</div></scrollpane>
+                <div>blub</div>
+            </horizontal-split>
+            <footer></footer>
+        </div>
         `
     }
 }

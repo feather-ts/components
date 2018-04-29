@@ -2,5 +2,29 @@ html,
 body {
     padding: 0;
     margin: 0;
-    background-color: aliceblue;
+}
+
+.application {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    > :first-child {
+        flex: none;
+    }
+
+    > :nth-child(2) {
+        flex: 1;
+    }
+
+    > :last-child {
+        height: 20px;
+        flex: none;
+    }
+}
+
+
+footer {
+    background-color: whitesmoke;
+    border-top: .5px solid gray;
 }

@@ -1,10 +1,5 @@
-import {ArrayWidget} from '@feather-ts/feather-ts/dist/decorators/construct'
-import {On, Scope} from '@feather-ts/feather-ts/dist/decorators/event'
-import {TemplateNode} from '@feather-ts/feather-ts/dist/decorators/template-node'
-import {LocalStorage} from '@feather-ts/feather-ts/dist/decorators/local-storage'
-import {Template} from '@feather-ts/feather-ts/dist/decorators/template'
-import {Computed} from '@feather-ts/feather-ts/dist/decorators/computed'
-import {isKey, Key} from '@feather-ts/ui-common/dist/keys'
+import {ArrayWidget, Computed, LocalStorage, On, Scope, Template, TemplateNode} from '@feather-ts/feather-ts'
+import {isKey, Key} from '@feather-ts/ui-common'
 import {NodeListener} from './tree-listener'
 
 export enum TreeNodeIcon {

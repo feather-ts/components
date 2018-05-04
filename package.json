@@ -1,6 +1,6 @@
 {
     "name": "@feather-ts/components",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "feather-ts various components",
     "types": "dist/components.d.ts",
     "main": "dist/components.js",
@@ -15,10 +15,12 @@
     },
     "homepage": "https://github.com/feather-ts/components#readme",
     "peerDependencies": {
-        "@feather-ts/feather-ts": "2.0.73",
-        "@feather-ts/ui-common": "1.0.65"
+        "@feather-ts/feather-ts": "^2.0.84",
+        "@feather-ts/ui-common": "^1.0.79"
     },
     "dependencies": {
+        "@feather-ts/feather-ts": "2.0.83",
+        "@feather-ts/ui-common": "^1.0.79",
         "@fortawesome/fontawesome-free-webfonts": "1.0.6",
         "bulma": "0.7.1",
         "fecha": "2.3.3"
@@ -43,7 +45,7 @@
         "dist"
     ],
     "scripts": {
-        "watch": "parcel src/html/index.html -p 9080",
+        "watch": "parcel src/html/index.html -p 9080 --no-autoinstall",
         "npm:version": "npm --no-git-tag-version version patch",
         "ui:compile": "tsc -d",
         "clean": "rimraf dist lib",

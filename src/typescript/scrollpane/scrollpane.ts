@@ -1,4 +1,4 @@
-import {Widget, Construct} from '@feather-ts/feather-ts/dist/decorators/construct'
+import {Widget, Construct} from '@feather-ts/feather-ts'
 import './scrollpane.pcss'
 
 @Construct({selector: 'scrollpane'})

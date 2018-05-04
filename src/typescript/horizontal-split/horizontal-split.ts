@@ -1,7 +1,5 @@
-import {Widget} from '@feather-ts/feather-ts/dist/decorators/construct'
-import {PanX, PanXEventInit, Phase} from '@feather-ts/ui-common/dist/pan-x'
-import {Construct} from '@feather-ts/feather-ts/dist/decorators/construct'
-import {LocalStorage} from '@feather-ts/feather-ts/dist/decorators/local-storage'
+import {Construct, LocalStorage, Widget} from '@feather-ts/feather-ts'
+import {PanX, PanXEventInit, Phase} from '@feather-ts/ui-common'
 import './horizontal-split.pcss'
 
 @Construct({selector: 'horizontal-split'})
@@ -24,8 +22,8 @@ export class HorizontalSplit implements Widget {
 
     @PanX()
     onDrag(ev: CustomEvent<PanXEventInit>) {
-        const {phase, x, target = null} = {...ev.detail}
-        if (phase === Phase.start && target.matches('.handle')) {
+        const {phase, x, target} = {...ev.detail}
+        if (phase === Phase.start && (target as HTMLElement).matches('.handle')) {
             this.dragging = true
         }
         else if (this.dragging && phase === Phase.move) {

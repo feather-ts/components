@@ -1,23 +1,20 @@
-import {Construct, LocalStorage, Widget} from '@feather-ts/feather-ts'
+import {Construct, LocalStorage, render, Widget} from '@feather-ts/feather-ts'
 import {PanX, PanXEventInit, Phase} from '@feather-ts/ui-common'
 import './horizontal-split.pcss'
 
 @Construct({selector: 'horizontal-split'})
 export class HorizontalSplit implements Widget {
 
-    element: HTMLElement
     firstElement: HTMLElement
     dragging = false
     @LocalStorage() width = 200
 
     init(el: HTMLElement) {
-        this.element = el
         this.firstElement = el.firstElementChild as HTMLElement
         const dragger = document.createElement('div')
         dragger.classList.add('handle')
         this.firstElement.insertAdjacentElement('afterend', dragger)
         this.applyWidth()
-        console.log('init split')
     }
 
     @PanX()

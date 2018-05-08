@@ -19,7 +19,7 @@
         "@feather-ts/ui-common": "^1.0.79"
     },
     "dependencies": {
-        "@feather-ts/feather-ts": "2.0.83",
+        "@feather-ts/feather-ts": "^2.0.89",
         "@feather-ts/ui-common": "^1.0.79",
         "@fortawesome/fontawesome-free-webfonts": "1.0.6",
         "bulma": "0.7.1",

@@ -1,12 +1,14 @@
 scrollpane {
-    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    display: flex;
+    align-items: stretch;
 
     .inner-scroll-pane {
-
+        min-height: 100%;
+        flex: 1;
     }
 }

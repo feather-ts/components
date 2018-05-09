@@ -8,15 +8,15 @@ scrollpane {
     --thumb-height: 0%;
     --thumb-top: 0px;
     --track-width: 5px;
+    --scrollbar-width: 17px;
 
     .inner-scroll-pane {
         flex: none;
         -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -ms-overflow-style: none;
         pointer-events: auto;
-        min-height: 100%;
-        max-height: 100%;
-        width: calc(100% + 17px);
+        height: 100%;
+        width: calc(100% + var(--scrollbar-width));
         padding-right: calc(2 * var(--track-width));
         overflow-x: hidden;
         overflow-y: scroll;

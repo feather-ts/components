@@ -27,6 +27,12 @@ export class ScrollPane implements Widget {
         observer.observe(wrapper, {childList: true, subtree: true, attributes: true})
     }
 
+    @AfterMount()
+    setScrollBarWidth() {
+        const wrapper = this.element.firstElementChild as HTMLElement
+        this.element.style.setProperty('--scrollbar-width', `${wrapper.offsetWidth - wrapper.clientWidth}px`)
+    }
+
     calculateThumb() {
         const el = this.element
         const inner = el.firstElementChild

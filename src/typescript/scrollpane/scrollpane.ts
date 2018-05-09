@@ -1,8 +1,6 @@
-import {Widget, Construct, render, Template, getTemplate, AfterMount} from '@feather-ts/feather-ts'
+import {AfterMount, Construct, ElementQuery, getTemplate, render, Template, Widget} from '@feather-ts/feather-ts'
 import './scrollpane.pcss'
-import {ElementQuery} from '@feather-ts/feather-ts'
 import {registerCleanUp} from '@feather-ts/feather-ts/dist/core/cleanup'
-import {On, Scope} from '@feather-ts/feather-ts/dist/decorators/event'
 
 @Construct({selector: 'scrollpane'})
 export class ScrollPane implements Widget {
@@ -18,7 +16,7 @@ export class ScrollPane implements Widget {
         const template = getTemplate(this)
         el.appendChild(template.doc)
         const calculateThumb = this.calculateThumb.bind(this)
-        const passive = {passive: true}
+        const passive = {passive: true, capture: false}
         window.addEventListener('resize', calculateThumb, passive)
         wrapper.addEventListener('scroll', calculateThumb, passive)
         registerCleanUp(el, () => {
@@ -26,15 +24,17 @@ export class ScrollPane implements Widget {
             wrapper.removeEventListener('scroll', calculateThumb)
         })
         const observer = new MutationObserver((mr: MutationRecord[]) => this.calculateThumb())
-        observer.observe(wrapper, {childList: true, subtree: true})
+        observer.observe(wrapper, {childList: true, subtree: true, attributes: true})
     }
 
-    @AfterMount()
     calculateThumb() {
         const el = this.element
         const inner = el.firstElementChild
-        const thumbHeight = (inner.clientHeight/ inner.scrollHeight * 100)
         const thumbTop = inner.scrollTop * (inner.clientHeight / inner.scrollHeight)
+        let thumbHeight = (inner.clientHeight / inner.scrollHeight * 100)
+        if (thumbHeight >= 100) {
+            thumbHeight = 0
+        }
         el.style.setProperty('--thumb-top', `${thumbTop.toFixed(2)}px`)
         el.style.setProperty('--thumb-height', `${thumbHeight.toFixed(2)}%`)
     }

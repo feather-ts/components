@@ -2,10 +2,13 @@ horizontal-split {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    touch-action: none;
 
     > * {
         overflow-x: hidden;
+    }
+
+    > *:first-child {
+        flex: none;
     }
 
     > *:last-child {
@@ -13,6 +16,7 @@ horizontal-split {
     }
 
     .handle {
+        touch-action: none;
         flex: none;
         width: 5px;
         cursor: ew-resize;
